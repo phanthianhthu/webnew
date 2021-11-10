@@ -63,14 +63,14 @@
 				<div>
 					<div class="col-sm-6" >
 						<div class="logo pull-left" >
-                            <a href="index.php" style="background-color:#;color:white; font-family: time new romans;"><b>83</b>
+                            <a href="index.php" style="background-color:#;color:white; font-family: time new romans;"><b>ATN</b>
                             <img src="images/Logo.jpg" width="50" height="50"></a>
 						</div>
 					</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<li><a href="index.php">Home Page</a></li>
-                                <li><a class="active"><input type="search" id="search" placeholder="Enter song name...."></a></li>
+                                <li><a class="active"><input type="search" id="search" placeholder="Enter product name...."></a></li>
                                 <li><a href="?page=payment">Payment</a></li>
                                 <?php
                                     if(isset($_SESSION['admin']) && $_SESSION['admin']==1){
@@ -78,7 +78,7 @@
 								<li class="dropdown"><a href="#">Management<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="?page=Category_Management">Category edit</a></li>
-										<li><a href="?page=product_management">Songs edit</a></li>
+										<li><a href="?page=product_management">Product edit</a></li>
                                     </ul>
                                     <?php
                                         }
@@ -107,7 +107,7 @@
 							</ul>
                             
 						</div>
-                        <marquee width="100%" behavior="scroll" bgcolor="yellow"><b>WELCOME TO 83 MUSIC - THE PLAVE TO ALWAYS UPDATE THE LASTEST SONGS</b></marquee>
+                        <marquee width="100%" behavior="scroll" bgcolor="pink"><b>WELCOME TO ATN SHOP - THE PLAVE TO ALWAYS UPDATE THE LASTEST PRODUCT</b></marquee>
 					</div>
 
 				</div>
