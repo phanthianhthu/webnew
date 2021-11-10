@@ -7,7 +7,7 @@ include_once("connection.php");
 			<div class="block-slider block-slider4">
 				<ul class="" id="bxslider-home4">
 					<li>
-						<img src="images/nhac-edm-cuc-manh-hay-nhat.jpg" alt="Slide">
+						<img src="images/anhnen.jpg" alt="Slide">
 						<div class="caption-group">
 
 					</li>
@@ -24,7 +24,7 @@ include_once("connection.php");
             <div class="row">
                 <div class="col-md-12">
                     <div class="latest-product">
-                        <h2 class="section-title"><strong><a color="blue">NEW SONG</a></h2></strong>
+                        <h2 class="section-title"><strong><a color="blue">NEW PRODUCT</a></h2></strong>
                         <div class="product-carousel">
                            <?php
 
