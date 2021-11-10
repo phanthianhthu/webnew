@@ -49,7 +49,7 @@
 					<div class="col-sm-6">
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
-								<li><a href="#"><i class="fa fa-phone"></i> 0965423541</a></li>
+								<li><a href="#"><i class="fa fa-phone"></i> +84 965423541</a></li>
 								<li><a href="" target="_blank"><i class="fa fa-envelope"></i>atnshop64@gmail.com</a></li>
 							</ul>
 						</div>
@@ -64,7 +64,7 @@
 					<div class="col-sm-6" >
 						<div class="logo pull-left" >
                             <a href="index.php" style="background-color:#;color:white; font-family: time new romans;"><b>83</b>
-                            <img src="images/music.jpg" width="50" height="50"></a>
+                            <img src="images/Logo.jpg" width="50" height="50"></a>
 						</div>
 					</div>
 						<div class="mainmenu pull-left">
