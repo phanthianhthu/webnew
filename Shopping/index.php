@@ -49,8 +49,8 @@
 					<div class="col-sm-6">
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
-								<li><a href="#"><i class="fa fa-phone"></i> 0328228593</a></li>
-								<li><a href="" target="_blank"><i class="fa fa-envelope"></i>83music@gmail.com</a></li>
+								<li><a href="#"><i class="fa fa-phone"></i> 0965423541</a></li>
+								<li><a href="" target="_blank"><i class="fa fa-envelope"></i>atnshop64@gmail.com</a></li>
 							</ul>
 						</div>
 					</div>
