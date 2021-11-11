@@ -18,7 +18,7 @@
             if(isset($_GET["funtion"])=="del"){
                 if(isset($_GET["id"])){
                     $id=$_GET["id"];
-                    pg_query($conn, "DELETE FROM product WHERE product_id='$id'");
+                    pg_query($conn, "DELETE FROM product WHERE Product_ID='$id'");
                 }
             } 
         ?>
@@ -40,33 +40,48 @@
                     <th><strong>Edit</strong></th>
                     <th><strong>Delete</strong></th>
                 </tr>
-             </thead>
+            </thead>
 
-			<tbody>
+
+            <tbody>
             <?php
             include_once("connection.php");
-            $No=1;
-            $result=pg_query($conn, "SELECT product_id, product_name, price, pro_qty, pro_image, cat_name
-            FROM product a, category b
-            WHERE a.cat_id = b.cat_id ORDER BY prodate DESC");
-            while($row=pg_fetch_array($result,NULL, PGSQL_ASSOC)){	
+            if(isset($_GET["function"])=="del"){
+                if(isset($_GET["id"])){
+                    $id=$_GET["id"];
+                    $sq="SELECT pro_image from product where product_id='$id'";
+                    $res=pg_query($conn,$sq);
+                    $row=pg_fetch_array($res, NULL, PGSQL_ASSOC);
+                    $filePic=$row['Pro_image'];
+                    unlink("images/".$filePic);
+                    pg_query($conn,"delete from product where Product_ID='$id'");
+                }
+            }
+            ?>
+            
+            <?php
+			$No=1;
+            $result=pg_query($conn,"SELECT * from product a, category b
+            where a.cat_id=b.cat_id");
+            while($row=pg_fetch_array($result, NULL, PGSQL_ASSOC)){	
 			?>
 			<tr>
-              <td ><?php echo $No ?></td>
-              <td ><?php echo $row["product_id"]; ?></td>
-              <td><?php echo $row["product_name"]; ?></td>
-              <td><?php echo $row["price"]; ?></td>
+              <td ><?php echo $No; ?></td>
+              <td ><?php echo $row["product_id"];  ?></td>
+              <td><?php echo $row["product_name"];  ?></td>
+              <td><?php echo $row["price"];   ?></td>
+              <td><?php echo $row["smalldesc"];  ?></td>
+              <td><?php echo $row["detaildesc"];  ?></td>
+              <td ><?php echo $row["prodate"]; ?></td>
               <td ><?php echo $row["pro_qty"]; ?></td>
-              <td><?php echo $row["cat_name"]; ?></td>
-             <td align='center' class='cotNutChucNang'>
-                <img src='img/<?php echo $row['pro_image']; ?>' border='0' width="50" height="50"  /></td>
-             <td align='center' class='cotNutChucNang'><a href="?page=update_product&&id=<?php echo $row["product_id"]; ?>">
-             <img src='images/edit.png' border='0'/></a></td>
-             <td style='text-align:center'>
-             <a href="index.php?page=product_management&&funtion=del&&id=<?php echo $row["product_id"]; ?>"
-             onclick="return deleteConfirm()">
-            <img src='images/delete.png' border='0' /></a></td>
-             </tr>
+              <td align='center' class='cotNutChucNang'>
+                 <img src='images/<?php echo $row['Pro_image'] ?>' border='0' width="50" height="50"  /></td>
+              <td><?php echo $row["cat_id"]; ?></td>
+             
+              <td align='center' class='cotNutChucNang'><a href="?page=update_product&&id=<?php echo $row["Product_ID"];?>"><img src='images/edit.png' border='0'/></a></td>
+             <td align='center' class='cotNutChucNang'><a href="?page=product_management&&function=del&&id=<?php echo $row["product_id"];?>"onclick="return deleteConfirm()"><img src='images/delete.png' border='0' /></a></td>
+            
+            </tr>
             <?php
                $No++;
             }

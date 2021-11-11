@@ -61,12 +61,15 @@
 		<div class="header-middle" style="background-color:	#777777">
 			<div class="container" >
 				<div>
-					<div class="col-sm-6" >
+
+
+                <div class="col-sm-6" >
 						<div class="logo pull-left" >
-                            <a href="index.php" style="background-color:#;color:white; font-family: time new romans;"><b>ATN</b>
-                            <img src="images/Logo.jpg" width="50" height="50"></a>
+                            <a href="index.php" style="background-color:#069;color:#FFF">
+                            <img src="images/Logo.jpg" width="150" height="150"></a>
 						</div>
 					</div>
+
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<li><a href="index.php">Home Page</a></li>
@@ -121,31 +124,31 @@
         $page=$_GET['page'];
         if($page=="register")
         {
-            include_once("Register.php");
+            include_once("register.php");
         }
         elseif($page=="login")
         {
-            include_once("Login.php");
-        }
-        elseif($page=="Category_Management")
-        {
-            include_once("Category_Management.php");
-        }
-        elseif($page=="product_management")
-        {
-            include_once("Product_Management.php");
-        }
-        elseif($page=="Add_Category")
-        {
-            include_once("Add_Category.php");
-        }
-        elseif($page=="update_category")
-        {
-            include_once("Update_Category.php");
+            include_once("login.php");
         }
         elseif($page=="category_management")
         {
-            include_once("Category_Management.php");
+            include_once("category_management.php");
+        }
+        elseif($page=="product_management")
+        {
+            include_once("product_management.php");
+        }
+        elseif($page=="add_category")
+        {
+            include_once("add_category.php");
+        }
+        elseif($page=="update_category")
+        {
+            include_once("update_category.php");
+        }
+        elseif($page=="category_management")
+        {
+            include_once("category_management.php");
         }
         elseif($page=="payment")
         {
@@ -157,19 +160,19 @@
         }
         elseif($page=="update_product")
         {
-            include_once("Update_Product.php");
+            include_once("update_product.php");
         }
         elseif($page=="add_product")
         {
-            include_once("Add_Product.php");
+            include_once("add_product.php");
         }
         elseif($page=="update_customes")
         {
-            include_once("Update_customer.php");
+            include_once("update_customer.php");
         }
     } 
     else{
-        include("Content.php");
+        include("content.php");
     }
 	?>
     </div> 

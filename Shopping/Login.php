@@ -4,38 +4,34 @@
 <script src="js/jquery-3.2.0.min.js"/></script>
 <script src="js/jquery.dataTables.min.js"/></script>
 <script src="js/dataTables.bootstrap.min.js"/></script>
+
 <?php
-    if (isset($_POST['btnLogin']))
+    
+    if(isset($_POST['btnLogin']))
     {
-	    $us = $_POST['txtUsername'];
-	    $pa = $_POST['txtPass'];	
-        $err = "";
-   	    if($us==""){
-		    $err .= "Enter Username, please<br/>";
-	    }
-	    if($pa==""){
-		    $err .= "Enter Password, please<br/>";
-	    }
-	    if($err != ""){
-		    echo $err;
-	    }
-	    else{
-		    include_once("connection.php");
+
+        $us = $_POST['txtUsername'];
+        $pa = $_POST['txtPass'];
+        
+            include_once("connection.php");
             $pass = md5($pa);
-		    $res=pg_query($conn, "SELECT username, password, state FROM public.customer WHERE username='$us' AND password='$pass'")
-		    or die(pg_errno($conn));
-		    $row = pg_fetch_array($res, NULL, PGSQL_ASSOC);
-            if(pg_num_rows($res)==1){				
-			    $_SESSION["us"] = $us;
-			    $_SESSION["admin"] = $row["state"];
-			    echo '<meta http-equiv="refresh" content="0;URL=index.php"/>';
-		        }
-		    else{
-                echo "You loged in fail";
-			    }						
-	    }
+            $res = mysqli_query($conn, "SELECT Username, Password, state FROM customer WHERE username='$us' AND password='$pass'");
+            $row = mysqli_fetch_array($res, NULL, PGSQL_ASSOC);
+            if(mysqli_num_rows($res)==1)
+            {
+                $_SESSION["us"] = $us;
+                $_SESSION["admin"] = $row["state"];
+                echo '<script>alert("Login successful");</script>';
+                echo '<meta http-equiv="refresh" content="0;URL=index.php" />';
+            }
+            else
+            {
+                echo "You login in fail";
+            }
     }
 ?>
+
+
 <h1>Login</h1>
 <form id="form1" name="form1" method="POST" action="">
 <div class="row">

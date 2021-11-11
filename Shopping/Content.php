@@ -1,56 +1,53 @@
  <?php
 include_once("connection.php");
 ?>
+
+
 <hr>
      <div class="slider-area">
-
 			<div class="block-slider block-slider4">
 				<ul class="" id="bxslider-home4">
 					<li>
 						<img src="images/anhnen.jpg" alt="Slide">
-						<div class="caption-group">
-
+						<div class="caption-group"></div>
 					</li>
-
-</ul>
-        
-    </div>
-			
+                </ul>
+            </div>
     </div> 
-    <hr>
-    <div class="maincontent-area">
+</hr>
+
+
+
+<div class="maincontent-area">
         <div class="zigzag-bottom"></div>
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="latest-product">
-                        <h2 class="section-title"><strong><a color="blue">NEW PRODUCT</a></h2></strong>
+                        <h2 class="section-title">New Product</h2>
                         <div class="product-carousel">
+                        
+                        <!--Load san pham tu DB -->
                            <?php
-
+						  // 	include_once("database.php");
 		  				   	$result = pg_query($conn, "SELECT * FROM product" );
 			
-			                if (!$result) { 
-                                die('Invalid query: ' . pg_errormessage($conn));
-                            }
-		
-			            
-			                while($row = pg_fetch_array($result, PGSQL_ASSOC)){
+			                while($row = pg_fetch_array($result, NULL, PGSQL_ASSOC)){
 				            ?>
-				            
+				            <!--Một sản phẩm -->
                             <div class="single-product">
-                                <div class="product-f-imagemu">
-                                   <img src="img/<?php echo $row['pro_image']?>" width="550" height="450">
+                                <div class="product-f-image">
+                                    <img src="images/<?php echo $row['Pro_image']?>" width="150" height="150">
                                     <div class="product-hover">
-                                        <a href="?page=1sanpham&&id=<?php echo  $row['pro_image']?>" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        <a href="?page=cart&ma=<?php echo  $row['Product_ID']?>" class="add-to-cart-link" ><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                        <a href="?page=menu&ma=<?php echo  $row['Product_ID']?>" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div>
                                 
-                                <h2><a href="?page=quanly_chitietsanpham&ma=<?php echo  $row['product_id']?>"><?php echo  $row['product_name' ]?></a>
-                                </h2>
-                                    
+                                <h2><a href="?page=menu&ma=<?php echo  $row['Product_ID']?>">Product Name: <?php echo  $row['Product_Name']?></a></h2>
+                                
                                 <div class="product-carousel-price">
-                                    <ins><?php echo  $row['price']?>,0$</ins> 
+                                    <ins>Price($): <?php echo  $row['Price']?></ins>
                                 </div> 
                             </div>
                 
@@ -63,7 +60,11 @@ include_once("connection.php");
                 </div>
             </div>
         </div>
-    </div>
-    
+    </div> <!-- End main content area -->
+
+
+
+
+
    
   
