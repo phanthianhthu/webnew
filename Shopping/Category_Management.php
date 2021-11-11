@@ -27,7 +27,7 @@
             include_once("connection.php");
             $No=1;
             $result = pg_query($conn, "SELECT * FROM category");
-            while($row=pg_fetch_array($result,pg_ASSOC))
+            while($row=pg_fetch_array($result, NULL, PGSQL_ASSOC))
             {
             ?>
 
