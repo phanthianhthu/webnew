@@ -9,10 +9,10 @@
 	function bind_Category_List($conn)
 	{
 		$sqlString = "select Cat_ID, Cat_Name from category";
-		$result = mysqli_query($conn,$sqlString);
+		$result = pg_query($conn,$sqlString);
 		echo "<select name='CategoryList' class='form-control'>
 			<option value='0'>Choose category</option>";
-			while($row=mysqli_fetch_array($result, MYSQLI_ASSOC))
+			while($row=pg_fetch_array($result, PGSQL_ASSOC))
 			{
 				echo "<option value='".$row['Cat_ID']."'>".$row['Cat_Name']."</option>";
 			}
@@ -60,8 +60,8 @@
 				if($pic['size']<=614400)
 				{
 					$sql="select * from product where Product_ID='$id' and Product_Name='$proname'";
-					$result = mysqli_query($conn, $sql);
-					if(mysqli_num_rows($result)=="0")
+					$result = pg_query($conn, $sql);
+					if(pg_num_rows($result)=="0")
 					{
 						copy($pic['tmp_name'], "img/".$pic['name']);
 						$filepic = $pic['name'];
