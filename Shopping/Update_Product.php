@@ -138,15 +138,15 @@
 			        ||$pic['type']=="image/gif"){
 				    if($pic['size']<= 614400){
 					    $sq="SELECT * from product where product_id != '$id' and product_name='$proname'";
-					    $result=mysqli_query($conn,$sq);
-					    if(mysqli_num_rows($result)==0){
+					    $result=pg_query($conn,$sq);
+					    if(pg_num_rows($result)==0){
 						        copy($pic['tmp_name'], "img/".$pic['name']);
 						        $filePic = $pic['name'];
 						        $sqlstring="UPDATE product set product_name='$proname', price=$price, smalldesc='$short',
 						        detaildesc='$detail', pro_qty=$qty,
 						        pro_image='$filePic',cat_id='$category',
 						        prodate='".date('Y-m-d H:i:s')."' WHERE product_id='$id'";
-						        mysqli_query($conn,$sqlstring);
+						        pg_query($conn,$sqlstring);
 						        echo '<meta http-equiv="refresh" content="0;URL=?page=product_management"/>';
 					        }
 					        else{
@@ -163,8 +163,8 @@
 		    }
 		    else{
 				$sq="SELECT * from product where product_id != '$id' and product_name='$proname'";
-				$result=mysqli_query($conn,$sq);
-				if(mysqli_num_rows($result)==0){
+				$result=pg_query($conn,$sq);
+				if(pg_num_rows($result)==0){
 					$sqlstring="UPDATE product set product_name='$proname',
 					price=$price, smalldesc='$short', detaildesc='$detail',
 					pro_qty=$qty, cat_id='$category',
