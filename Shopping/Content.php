@@ -39,15 +39,15 @@ include_once("connection.php");
                                 <div class="product-f-image">
                                     <img src="images/<?php echo $row['Pro_image']?>" width="150" height="150">
                                     <div class="product-hover">
-                                        <a href="?page=cart&ma=<?php echo  $row['Product_ID']?>" class="add-to-cart-link" ><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="?page=menu&ma=<?php echo  $row['Product_ID']?>" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        <a href="?page=cart&ma=<?php echo  $row['product_id']?>" class="add-to-cart-link" ><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                                        <a href="?page=menu&ma=<?php echo  $row['product_id']?>" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div>
                                 
-                                <h2><a href="?page=menu&ma=<?php echo  $row['Product_ID']?>">Product Name: <?php echo  $row['Product_Name']?></a></h2>
+                                <h2><a href="?page=menu&ma=<?php echo  $row['product_id']?>">Product Name: <?php echo  $row['product_name']?></a></h2>
                                 
                                 <div class="product-carousel-price">
-                                    <ins>Price($): <?php echo  $row['Price']?></ins>
+                                    <ins>Price($): <?php echo  $row['price']?></ins>
                                 </div> 
                             </div>
                 
