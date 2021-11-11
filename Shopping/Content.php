@@ -7,7 +7,7 @@ include_once("connection.php");
 			<div class="block-slider block-slider4">
 				<ul class="" id="bxslider-home4">
 					<li>
-						<img src="images/anhnen.jpg" alt="Slide">
+						<img src="images/anhnen1.jpg" alt="Slide">
 						<div class="caption-group">
 
 					</li>
@@ -28,14 +28,14 @@ include_once("connection.php");
                         <div class="product-carousel">
                            <?php
 
-		  				   	$result = mysqli_query($conn, "SELECT * FROM product" );
+		  				   	$result = pg_query($conn, "SELECT * FROM product" );
 			
 			                if (!$result) { 
-                                die('Invalid query: ' . mysqli_error($conn));
+                                die('Invalid query: ' . pg_error($conn));
                             }
 		
 			            
-			                while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+			                while($row = pg_fetch_array($result, MYSQLI_ASSOC)){
 				            ?>
 				            
                             <div class="single-product">

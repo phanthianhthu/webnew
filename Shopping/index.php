@@ -208,10 +208,10 @@
             <div class="row">
                 <div class="col-md-3 col-sm-6">
                     <div class="footer-about-us">
-                        <h2><span>Nike Shoes</span></h2>
-                        <p>Nike SB <br>
-                        Nike Airforce <br>
-                        Jordan <br>
+                        <h2><span>ATN Shop</span></h2>
+                        <p>The children's toy shop is currently doing business in the form of online sales through a hotline number. <br>
+                        The shop has a nationwide delivery service, so you can access and order anywhere. <br>
+                        For quick and convenient shopping advice, you can directly buy goods at ATN Shop. <br>
                         </p>
                         <div class="footer-social">
                             <a href="https://www.facebook.com/Just-Authentic-101349471810663    " target="_blank"><i class="fa fa-facebook"></i></a>
