@@ -24,7 +24,7 @@
             $pass = md5($pa);
 		    $res=pg_query($conn, "SELECT Username, Password, state FROM public.customer WHERE Username='$us' AND Password='$pass'")
 		    or die(pg_errno($conn));
-		    $row = pg_fetch_array($res, MYSQLI_ASSOC);
+		    $row = pg_fetch_array($res,NULL, PGSQL_ASSOC);
             if(pg_num_rows($res)==1){				
 			    $_SESSION["us"] = $us;
 			    $_SESSION["admin"] = $row["state"];
