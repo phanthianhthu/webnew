@@ -228,7 +228,7 @@
                 <div class="col-md-8">
                     <div class="copyright">
                         <p>&copy;Just do it
-                            <img src="images/nike.jpeg" width="50" height="50"> </p>
+                            <img src="images/hinhcute.jpg" width="50" height="50"> </p>
                     </div>
                 </div>
                 
