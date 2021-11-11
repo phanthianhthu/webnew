@@ -1,1 +1,0 @@
-<img src="images/Payment.jpg" style="padding-left:40%;">

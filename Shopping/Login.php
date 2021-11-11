@@ -22,7 +22,7 @@
 	    else{
 		    include_once("connection.php");
             $pass = md5($pa);
-		    $res=pg_query($conn, "SELECT Username, Password, state FROM public.customer WHERE Username='$us' AND Password='$pass'")
+		    $res=pg_query($conn, "SELECT username, password, state FROM customer WHERE username='$us' AND password='$pass'")
 		    or die(pg_errno($conn));
 		    $row = pg_fetch_array($res, NULL, PGSQL_ASSOC);
             if(pg_num_rows($res)==1){				
@@ -42,14 +42,14 @@
     <div class="form-group">				    
         <label for="txtUsername" class="col-sm-2 control-label">Username(*):  </label>
 		<div class="col-sm-10">
-		      <input type="text" name="txtUsername" id="txtUsername" class="form-control" placeholder="Username" value=""/>
+		      <input type="text" name="txtUsername" id="txtUsername" class="form-control" placeholder="username" value=""/>
 		</div>
       </div>  
       
     <div class="form-group">
 		<label for="txtPass" class="col-sm-2 control-label">Password(*):  </label>			
 		<div class="col-sm-10">
-		      	<input type="password" name="txtPass" id="txtPass" class="form-control" placeholder="Password" value=""/>
+		      	<input type="password" name="txtPass" id="txtPass" class="form-control" placeholder="password" value=""/>
 		</div>
 	</div> 
 	<div class="form-group"> 
